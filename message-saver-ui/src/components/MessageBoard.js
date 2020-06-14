@@ -11,7 +11,7 @@ export default function MessageBoard({chats}) {
     const [activeTab, setActiveTab] = useState('all')
     const [activeChat, setActiveChat] = useState(0)
 
-    const [allMessages, setAllMessages] = useState(['hey u butt why is this being so annoying right now good lord.', 'there'])
+    const [allMessages, setAllMessages] = useState(['I am just testinga message.', 'there'])
     const [deadlineMessages, setdeadlineMessages] = useState(['dfdf', 'fsdfsdf'])
     const [urlMessages, seturlMessages] = useState(['fsdfsdf', 'dsfsdf'])
 

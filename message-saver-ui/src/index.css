@@ -8,6 +8,7 @@ body {
   background-image: url('images/background_three.jpg');
   background-size: cover;
   /*background-repeat: no-repeat;*/
+
 }
 
 code {
@@ -17,10 +18,12 @@ code {
 
 .center-main-content{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  align-content: center;
   align-self: center;
   margin-top: 30vh;
+  justify-content: center ;
 }
 
 
@@ -31,16 +34,13 @@ code {
   align-self: center;
 }
 
-
 .has-left-margin{
-  margin-left: 30%;
+  margin-left: 10%;
 }
-
 
 .has-33-width{
   width: 25%;
 }
-
 
 .chat-bar-class{
   margin-top: 1%;
@@ -50,21 +50,14 @@ code {
   height: 150px;
 }
 
-.is-column-direction{
-  flex-direction: row;
-}
-
-
 .title-font {
   font-size: 70px;
   font-weight: bold;
 }
 
-
 .minor-top-margin{
   margin-top: 3vh;
 }
-
 
 .message-style{
   border: black solid 1px;

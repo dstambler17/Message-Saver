@@ -4,11 +4,14 @@ import Tab from 'react-bootstrap/Tab';
 import MessageList from './MessageList'
 import SideBar from './SideBar'
 
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+
 export default function MessageBoard({chats}) {
     const [activeTab, setActiveTab] = useState('all')
     const [activeChat, setActiveChat] = useState(0)
 
-    const [allMessages, setAllMessages] = useState(['hey', 'there'])
+    const [allMessages, setAllMessages] = useState(['hey u butt why is this being so annoying right now good lord.', 'there'])
     const [deadlineMessages, setdeadlineMessages] = useState(['dfdf', 'fsdfsdf'])
     const [urlMessages, seturlMessages] = useState(['fsdfsdf', 'dsfsdf'])
 
@@ -18,8 +21,32 @@ export default function MessageBoard({chats}) {
         //Then update, allMessages, deadlineMessages, urlMessages in a useEffect of sorts
     }
 
+    function updateMessageLog (event) {
+        this.setAllMessages ({
+            allMessages : this.state.allMessages.concat(event.target.value)
+        });
+
+        console.log("yo")
+    }
+
     return (
-        <div className="center-main-content is-column-direction">
+        <div className="center-main-content">
+            <Form>
+                <Form.Group controlId="nameInput">
+                    <Form.Label>Input Name</Form.Label>
+                    <Form.Control placeholder="Type Name" />
+                </Form.Group>    
+
+                <Form.Group controlId="chatInput">
+                    <Form.Label>Input Chat</Form.Label>
+                    <Form.Control placeholder="Type Message" />
+                </Form.Group>
+                
+                <Button variant="primary" type="button" onChange={updateMessageLog}>
+                    Submit
+                </Button>
+            </Form>
+
             <SideBar convos={chats} activeChat={activeChat} activate_item={activate_item}/>
             <div className = "has-33-width">
                 <Tabs defaultActiveKey="all messages" id="uncontrolled-tab-example">
@@ -35,8 +62,6 @@ export default function MessageBoard({chats}) {
                 </Tabs>
             </div>
 
-            
-            
         </div>
     )
 }
